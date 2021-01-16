@@ -1,0 +1,88 @@
+pipeline {
+    agent any
+    stages {
+        stage('Clean'){    
+            steps {
+                deleteDir()
+                sh 'printenv'
+            }
+        }
+
+        stage('Checkout') {
+            steps {
+                // Get some code from a CodeCommit repository
+                sh "git clone https://${env.CODECOMMIT_USER}:${env.CODECOMMIT_PASSWORD}@git-codecommit.us-east-1.amazonaws.com/v1/repos/todo-list-serverless"
+            }
+        }
+        stage('SetUp'){
+            steps{
+                // Setup Virtualenv for testing
+            }
+        }
+        stage('Test'){
+            steps{
+                dir("todo-list-aws/test") {
+                    // Static program analysis -> radon
+                    echo 'Make some cool static program analysis wich radon. IIs the code enought simple to understand?'
+                }
+            }
+            steps{
+                dir("todo-list-aws/test") {
+                    // Quality program analysis -> flake8
+                    echo 'echo My code has enought quality?'
+                }
+            }
+            steps{
+                dir("todo-list-aws/test") {
+                    // Security programa analysis -> bandit
+                    echo 'Make some security analysis of the code. Is the code secure?'
+                }
+            }
+            steps{
+                dir("todo-list-aws/test") {
+                    // Unitary testing -> unittest or pytest
+                    sh ''
+                    // Coverage report -> coverage
+                    echo 'Execute something like coverage run -m & coverage report -m'
+                }
+            }
+        }
+        stage('Build') {
+            steps {
+                dir("todo-list-aws") {
+                    // Build release
+                    echo 'Maybe something like sam build?'
+                    sh "sam build ..."
+                    // Package release and persist in s3 bucket
+                    sh "sam package --template-file template.yaml --output-template-file packaged.yaml --s3-bucket ${env.COUNTRY}-${env.TEAM}-${env.ENVIRONMENT}-${env.SERVICE}-${env.RAND_ID}-artifacts" 
+                }
+            }
+        }
+        stage('Integration Test on local') {
+            steps{
+                dir("todo-list-aws/test") {
+                    // Unittest or pytest                   
+                    // Integration test over local -> unittest or pytest against the lambda functions.
+                    echo 'test all methods works fine. Maybe with sam-local and aws dynamodb official docker image'
+                }   
+            }
+        }
+        stage('Deploy'){
+            steps{
+                dir("todo-list-aws") {
+                    // Deploy architecture
+                    sh "yes | sam deploy --template-file packaged.yaml --stack-name ${env.STACK_NAME} --parameter-overrides Environment=${env.ENVIRONMENT}"
+                }   
+            }
+        }
+        stage('Integration Test after deploy'){
+            steps{
+                dir("todo-list-aws") {
+                    // Unittest or pytest                   
+                    // Unitary testing -> unittest or pytest against the lambda functions.
+                    echo 'test all methods works fine'
+                }   
+            }
+        }
+    }
+}
