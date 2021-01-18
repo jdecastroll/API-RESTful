@@ -2,8 +2,8 @@ service: serverless-rest-api-with-dynamodb
 
 frameworkVersion: ">=1.1.0"
 
-org: UNIR
-app: todo-list-serverless
+org: jdecastroll
+app: api-restful-todo
 
 provider:
   name: aws
