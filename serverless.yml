@@ -3,7 +3,7 @@ service: serverless-rest-api-with-dynamodb
 frameworkVersion: ">=1.1.0"
 
 org: jdecastroll
-app: todo-list-serverless
+app: api-restful-todo
 
 provider:
   name: aws
