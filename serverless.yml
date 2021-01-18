@@ -1,4 +1,4 @@
-org: jdecastroll
+org: jdecastro
 app: todo-list-serverless
 service: serverless-rest-api-with-dynamodb
 
