@@ -4,7 +4,7 @@
   "description": "Serverless CRUD service exposing a REST HTTP interface",
   "author": "",
   "scripts": {
-    "test": "test/TestToDo.py"
+    "test": "test/ToDoCreateTable.py,  test/ToDoDeleteItem.py,  test/ToDoGetItem.py,  test/ToDoListItems.py, test/ToDoPutItem.py,  test/ToDoUpdateItem.py"
   },
   "license": "MIT",
   "devDependencies": {
