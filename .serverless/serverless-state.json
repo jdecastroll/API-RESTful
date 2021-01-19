@@ -8,7 +8,7 @@
       "name": "aws",
       "runtime": "python3.8",
       "environment": {
-        "DYNAMODB_TABLE": "serverless-rest-api-with-dynamodb-Release"
+        "DYNAMODB_TABLE": "serverless-rest-api-with-dynamodb-dev"
       },
       "iamRoleStatements": [
         {
@@ -21,7 +21,7 @@
             "dynamodb:UpdateItem",
             "dynamodb:DeleteItem"
           ],
-          "Resource": "arn:aws:dynamodb:us-east-1:*:table/serverless-rest-api-with-dynamodb-Release"
+          "Resource": "arn:aws:dynamodb:us-east-1:*:table/serverless-rest-api-with-dynamodb-dev"
         }
       ],
       "stage": "dev",
@@ -104,31 +104,31 @@
           "CreateLogGroup": {
             "Type": "AWS::Logs::LogGroup",
             "Properties": {
-              "LogGroupName": "/aws/lambda/serverless-rest-api-with-dynamodb-Release-create"
+              "LogGroupName": "/aws/lambda/serverless-rest-api-with-dynamodb-dev-create"
             }
           },
           "ListLogGroup": {
             "Type": "AWS::Logs::LogGroup",
             "Properties": {
-              "LogGroupName": "/aws/lambda/serverless-rest-api-with-dynamodb-Release-list"
+              "LogGroupName": "/aws/lambda/serverless-rest-api-with-dynamodb-dev-list"
             }
           },
           "GetLogGroup": {
             "Type": "AWS::Logs::LogGroup",
             "Properties": {
-              "LogGroupName": "/aws/lambda/serverless-rest-api-with-dynamodb-Release-get"
+              "LogGroupName": "/aws/lambda/serverless-rest-api-with-dynamodb-dev-get"
             }
           },
           "UpdateLogGroup": {
             "Type": "AWS::Logs::LogGroup",
             "Properties": {
-              "LogGroupName": "/aws/lambda/serverless-rest-api-with-dynamodb-Release-update"
+              "LogGroupName": "/aws/lambda/serverless-rest-api-with-dynamodb-dev-update"
             }
           },
           "DeleteLogGroup": {
             "Type": "AWS::Logs::LogGroup",
             "Properties": {
-              "LogGroupName": "/aws/lambda/serverless-rest-api-with-dynamodb-Release-delete"
+              "LogGroupName": "/aws/lambda/serverless-rest-api-with-dynamodb-dev-delete"
             }
           },
           "IamRoleLambdaExecution": {
@@ -157,7 +157,7 @@
                       "-",
                       [
                         "serverless-rest-api-with-dynamodb",
-                        "Release",
+                        "dev",
                         "lambda"
                       ]
                     ]
@@ -173,7 +173,7 @@
                         ],
                         "Resource": [
                           {
-                            "Fn::Sub": "arn:${AWS::Partition}:logs:${AWS::Region}:${AWS::AccountId}:log-group:/aws/lambda/serverless-rest-api-with-dynamodb-Release*:*"
+                            "Fn::Sub": "arn:${AWS::Partition}:logs:${AWS::Region}:${AWS::AccountId}:log-group:/aws/lambda/serverless-rest-api-with-dynamodb-dev*:*"
                           }
                         ]
                       },
@@ -184,7 +184,7 @@
                         ],
                         "Resource": [
                           {
-                            "Fn::Sub": "arn:${AWS::Partition}:logs:${AWS::Region}:${AWS::AccountId}:log-group:/aws/lambda/serverless-rest-api-with-dynamodb-Release*:*:*"
+                            "Fn::Sub": "arn:${AWS::Partition}:logs:${AWS::Region}:${AWS::AccountId}:log-group:/aws/lambda/serverless-rest-api-with-dynamodb-dev*:*:*"
                           }
                         ]
                       },
@@ -201,7 +201,7 @@
                   "-",
                   [
                     "serverless-rest-api-with-dynamodb",
-                    "Release",
+                    "dev",
                     {
                       "Ref": "AWS::Region"
                     },
@@ -288,16 +288,16 @@
                 "S3Bucket": {
                   "Ref": "ServerlessDeploymentBucket"
                 },
-                "S3Key": "serverless/serverless-rest-api-with-dynamodb/Release/1610995035344-2021-01-18T18:37:15.344Z/serverless-rest-api-with-dynamodb.zip"
+                "S3Key": "serverless/serverless-rest-api-with-dynamodb/dev/1611079831660-2021-01-19T18:10:31.660Z/serverless-rest-api-with-dynamodb.zip"
               },
               "Handler": "s_create.handler",
               "Runtime": "python3.8",
-              "FunctionName": "serverless-rest-api-with-dynamodb-Release-create",
+              "FunctionName": "serverless-rest-api-with-dynamodb-dev-create",
               "MemorySize": 1024,
               "Timeout": 6,
               "Environment": {
                 "Variables": {
-                  "DYNAMODB_TABLE": "serverless-rest-api-with-dynamodb-Release"
+                  "DYNAMODB_TABLE": "serverless-rest-api-with-dynamodb-dev"
                 }
               },
               "Role": {
@@ -318,16 +318,16 @@
                 "S3Bucket": {
                   "Ref": "ServerlessDeploymentBucket"
                 },
-                "S3Key": "serverless/serverless-rest-api-with-dynamodb/Release/1610995035344-2021-01-18T18:37:15.344Z/serverless-rest-api-with-dynamodb.zip"
+                "S3Key": "serverless/serverless-rest-api-with-dynamodb/dev/1611079831660-2021-01-19T18:10:31.660Z/serverless-rest-api-with-dynamodb.zip"
               },
               "Handler": "s_list.handler",
               "Runtime": "python3.8",
-              "FunctionName": "serverless-rest-api-with-dynamodb-Release-list",
+              "FunctionName": "serverless-rest-api-with-dynamodb-dev-list",
               "MemorySize": 1024,
               "Timeout": 6,
               "Environment": {
                 "Variables": {
-                  "DYNAMODB_TABLE": "serverless-rest-api-with-dynamodb-Release"
+                  "DYNAMODB_TABLE": "serverless-rest-api-with-dynamodb-dev"
                 }
               },
               "Role": {
@@ -348,16 +348,16 @@
                 "S3Bucket": {
                   "Ref": "ServerlessDeploymentBucket"
                 },
-                "S3Key": "serverless/serverless-rest-api-with-dynamodb/Release/1610995035344-2021-01-18T18:37:15.344Z/serverless-rest-api-with-dynamodb.zip"
+                "S3Key": "serverless/serverless-rest-api-with-dynamodb/dev/1611079831660-2021-01-19T18:10:31.660Z/serverless-rest-api-with-dynamodb.zip"
               },
               "Handler": "s_get.handler",
               "Runtime": "python3.8",
-              "FunctionName": "serverless-rest-api-with-dynamodb-Release-get",
+              "FunctionName": "serverless-rest-api-with-dynamodb-dev-get",
               "MemorySize": 1024,
               "Timeout": 6,
               "Environment": {
                 "Variables": {
-                  "DYNAMODB_TABLE": "serverless-rest-api-with-dynamodb-Release"
+                  "DYNAMODB_TABLE": "serverless-rest-api-with-dynamodb-dev"
                 }
               },
               "Role": {
@@ -378,16 +378,16 @@
                 "S3Bucket": {
                   "Ref": "ServerlessDeploymentBucket"
                 },
-                "S3Key": "serverless/serverless-rest-api-with-dynamodb/Release/1610995035344-2021-01-18T18:37:15.344Z/serverless-rest-api-with-dynamodb.zip"
+                "S3Key": "serverless/serverless-rest-api-with-dynamodb/dev/1611079831660-2021-01-19T18:10:31.660Z/serverless-rest-api-with-dynamodb.zip"
               },
               "Handler": "s_update.handler",
               "Runtime": "python3.8",
-              "FunctionName": "serverless-rest-api-with-dynamodb-Release-update",
+              "FunctionName": "serverless-rest-api-with-dynamodb-dev-update",
               "MemorySize": 1024,
               "Timeout": 6,
               "Environment": {
                 "Variables": {
-                  "DYNAMODB_TABLE": "serverless-rest-api-with-dynamodb-Release"
+                  "DYNAMODB_TABLE": "serverless-rest-api-with-dynamodb-dev"
                 }
               },
               "Role": {
@@ -408,16 +408,16 @@
                 "S3Bucket": {
                   "Ref": "ServerlessDeploymentBucket"
                 },
-                "S3Key": "serverless/serverless-rest-api-with-dynamodb/Release/1610995035344-2021-01-18T18:37:15.344Z/serverless-rest-api-with-dynamodb.zip"
+                "S3Key": "serverless/serverless-rest-api-with-dynamodb/dev/1611079831660-2021-01-19T18:10:31.660Z/serverless-rest-api-with-dynamodb.zip"
               },
               "Handler": "s_delete.handler",
               "Runtime": "python3.8",
-              "FunctionName": "serverless-rest-api-with-dynamodb-Release-delete",
+              "FunctionName": "serverless-rest-api-with-dynamodb-dev-delete",
               "MemorySize": 1024,
               "Timeout": 6,
               "Environment": {
                 "Variables": {
-                  "DYNAMODB_TABLE": "serverless-rest-api-with-dynamodb-Release"
+                  "DYNAMODB_TABLE": "serverless-rest-api-with-dynamodb-dev"
                 }
               },
               "Role": {
@@ -431,60 +431,60 @@
               "DeleteLogGroup"
             ]
           },
-          "ListLambdaVersionlRpiHgZe0Dgi05XosCwcesPf2uhGmvPLxYubhLgflg": {
+          "ListLambdaVersionJkctOueIz0u91dpeZu7UoqhXGdtFS0cfoVDD8lEerG4": {
             "Type": "AWS::Lambda::Version",
             "DeletionPolicy": "Retain",
             "Properties": {
               "FunctionName": {
                 "Ref": "ListLambdaFunction"
               },
-              "CodeSha256": "LV6p3Q5spDtq0po0sgvKUbA+InX5pYrsb1yiRfy60yU="
+              "CodeSha256": "VmTOPoPW89JBEpwb7VnSIGUMkcjz1VqfhNEKxDnbnek="
             }
           },
-          "GetLambdaVersionv7tIqMfNa8iRkz6OkKMvPxutsrwIK5ZhWoWrr8np48": {
+          "GetLambdaVersionocXg9wZPh9lSYIQmTvHjVJjuXorBFgulLKyJM6SMRY": {
             "Type": "AWS::Lambda::Version",
             "DeletionPolicy": "Retain",
             "Properties": {
               "FunctionName": {
                 "Ref": "GetLambdaFunction"
               },
-              "CodeSha256": "LV6p3Q5spDtq0po0sgvKUbA+InX5pYrsb1yiRfy60yU="
+              "CodeSha256": "VmTOPoPW89JBEpwb7VnSIGUMkcjz1VqfhNEKxDnbnek="
             }
           },
-          "UpdateLambdaVersionVjxMxucNPROjH0dkq4rGfkj7UIjnLYQkhtRs8nuu0fE": {
+          "UpdateLambdaVersionPkYVR89csLQrqWNkKHbdFOpe6TMlGS5UJdFPNsUhk": {
             "Type": "AWS::Lambda::Version",
             "DeletionPolicy": "Retain",
             "Properties": {
               "FunctionName": {
                 "Ref": "UpdateLambdaFunction"
               },
-              "CodeSha256": "LV6p3Q5spDtq0po0sgvKUbA+InX5pYrsb1yiRfy60yU="
+              "CodeSha256": "VmTOPoPW89JBEpwb7VnSIGUMkcjz1VqfhNEKxDnbnek="
             }
           },
-          "DeleteLambdaVersion2OLA6jcSKUpGxl8VIt4bUYnpypiS4YCYwVZLqf2LIE": {
+          "DeleteLambdaVersionPGYXUkhZJ60e95Rk3BAVg9kIOZALr77zmJomuFD34": {
             "Type": "AWS::Lambda::Version",
             "DeletionPolicy": "Retain",
             "Properties": {
               "FunctionName": {
                 "Ref": "DeleteLambdaFunction"
               },
-              "CodeSha256": "LV6p3Q5spDtq0po0sgvKUbA+InX5pYrsb1yiRfy60yU="
+              "CodeSha256": "VmTOPoPW89JBEpwb7VnSIGUMkcjz1VqfhNEKxDnbnek="
             }
           },
-          "CreateLambdaVersion8F4ThizAVYI7MYaxRdNdHWtrTup6FpN7m4OUgKMoiJY": {
+          "CreateLambdaVersiondkTcdbIlsOeE59gIjeeeZErSgMJrmbk1zBism6UuxF4": {
             "Type": "AWS::Lambda::Version",
             "DeletionPolicy": "Retain",
             "Properties": {
               "FunctionName": {
                 "Ref": "CreateLambdaFunction"
               },
-              "CodeSha256": "LV6p3Q5spDtq0po0sgvKUbA+InX5pYrsb1yiRfy60yU="
+              "CodeSha256": "VmTOPoPW89JBEpwb7VnSIGUMkcjz1VqfhNEKxDnbnek="
             }
           },
           "ApiGatewayRestApi": {
             "Type": "AWS::ApiGateway::RestApi",
             "Properties": {
-              "Name": "Release-serverless-rest-api-with-dynamodb",
+              "Name": "dev-serverless-rest-api-with-dynamodb",
               "EndpointConfiguration": {
                 "Types": [
                   "EDGE"
@@ -825,13 +825,13 @@
               "MethodResponses": []
             }
           },
-          "ApiGatewayDeployment1610995029835": {
+          "ApiGatewayDeployment1611079825998": {
             "Type": "AWS::ApiGateway::Deployment",
             "Properties": {
               "RestApiId": {
                 "Ref": "ApiGatewayRestApi"
               },
-              "StageName": "Release"
+              "StageName": "dev"
             },
             "DependsOn": [
               "ApiGatewayMethodTodosOptions",
@@ -1031,7 +1031,7 @@
           "ApiGatewayLogGroup": {
             "Type": "AWS::Logs::LogGroup",
             "Properties": {
-              "LogGroupName": "/aws/api-gateway/serverless-rest-api-with-dynamodb-Release"
+              "LogGroupName": "/aws/api-gateway/serverless-rest-api-with-dynamodb-dev"
             }
           },
           "CustomApiGatewayAccountCloudWatchRole": {
@@ -1071,7 +1071,7 @@
                     "Fn::Join": [
                       "-",
                       [
-                        "Release",
+                        "dev",
                         "serverless-rest-api-with-dynamodb",
                         "custom-resources-lambda"
                       ]
@@ -1137,9 +1137,9 @@
                 "S3Bucket": {
                   "Ref": "ServerlessDeploymentBucket"
                 },
-                "S3Key": "serverless/serverless-rest-api-with-dynamodb/Release/1610995035344-2021-01-18T18:37:15.344Z/custom-resources.zip"
+                "S3Key": "serverless/serverless-rest-api-with-dynamodb/dev/1611079831660-2021-01-19T18:10:31.660Z/custom-resources.zip"
               },
-              "FunctionName": "serverless-rest-api-with-dynamod086e6d3112a1f71d89c4a7cb879b1de6",
+              "FunctionName": "serverless-rest-api-with-dynamod41bc63083231fc3b0a9060785270c305",
               "Handler": "apiGatewayCloudWatchRole/handler.handler",
               "MemorySize": 1024,
               "Runtime": "nodejs12.x",
@@ -1175,13 +1175,13 @@
                 "ReadCapacityUnits": 1,
                 "WriteCapacityUnits": 1
               },
-              "TableName": "serverless-rest-api-with-dynamodb-Release"
+              "TableName": "serverless-rest-api-with-dynamodb-dev"
             }
           },
           "CloudWatchLogsSubscriptionFilterCreateLogGroup": {
             "Type": "AWS::Logs::SubscriptionFilter",
             "Properties": {
-              "DestinationArn": "arn:aws:logs:us-east-1:802587217904:destination:3c15c112-ecd8-4888-a388-8848bee05a98#zxPKL1qR3MH6ltTgSR#serverless-rest-api-with-dynamodb#Release",
+              "DestinationArn": "arn:aws:logs:us-east-1:802587217904:destination:3c15c112-ecd8-4888-a388-8848bee05a98#zxPKL1qR3MH6ltTgSR#serverless-rest-api-with-dynamodb#dev",
               "FilterPattern": "?\"REPORT RequestId: \" ?\"SERVERLESS_ENTERPRISE\"",
               "LogGroupName": {
                 "Ref": "CreateLogGroup"
@@ -1191,7 +1191,7 @@
           "CloudWatchLogsSubscriptionFilterListLogGroup": {
             "Type": "AWS::Logs::SubscriptionFilter",
             "Properties": {
-              "DestinationArn": "arn:aws:logs:us-east-1:802587217904:destination:3c15c112-ecd8-4888-a388-8848bee05a98#zxPKL1qR3MH6ltTgSR#serverless-rest-api-with-dynamodb#Release",
+              "DestinationArn": "arn:aws:logs:us-east-1:802587217904:destination:3c15c112-ecd8-4888-a388-8848bee05a98#zxPKL1qR3MH6ltTgSR#serverless-rest-api-with-dynamodb#dev",
               "FilterPattern": "?\"REPORT RequestId: \" ?\"SERVERLESS_ENTERPRISE\"",
               "LogGroupName": {
                 "Ref": "ListLogGroup"
@@ -1201,7 +1201,7 @@
           "CloudWatchLogsSubscriptionFilterGetLogGroup": {
             "Type": "AWS::Logs::SubscriptionFilter",
             "Properties": {
-              "DestinationArn": "arn:aws:logs:us-east-1:802587217904:destination:3c15c112-ecd8-4888-a388-8848bee05a98#zxPKL1qR3MH6ltTgSR#serverless-rest-api-with-dynamodb#Release",
+              "DestinationArn": "arn:aws:logs:us-east-1:802587217904:destination:3c15c112-ecd8-4888-a388-8848bee05a98#zxPKL1qR3MH6ltTgSR#serverless-rest-api-with-dynamodb#dev",
               "FilterPattern": "?\"REPORT RequestId: \" ?\"SERVERLESS_ENTERPRISE\"",
               "LogGroupName": {
                 "Ref": "GetLogGroup"
@@ -1211,7 +1211,7 @@
           "CloudWatchLogsSubscriptionFilterUpdateLogGroup": {
             "Type": "AWS::Logs::SubscriptionFilter",
             "Properties": {
-              "DestinationArn": "arn:aws:logs:us-east-1:802587217904:destination:3c15c112-ecd8-4888-a388-8848bee05a98#zxPKL1qR3MH6ltTgSR#serverless-rest-api-with-dynamodb#Release",
+              "DestinationArn": "arn:aws:logs:us-east-1:802587217904:destination:3c15c112-ecd8-4888-a388-8848bee05a98#zxPKL1qR3MH6ltTgSR#serverless-rest-api-with-dynamodb#dev",
               "FilterPattern": "?\"REPORT RequestId: \" ?\"SERVERLESS_ENTERPRISE\"",
               "LogGroupName": {
                 "Ref": "UpdateLogGroup"
@@ -1221,7 +1221,7 @@
           "CloudWatchLogsSubscriptionFilterDeleteLogGroup": {
             "Type": "AWS::Logs::SubscriptionFilter",
             "Properties": {
-              "DestinationArn": "arn:aws:logs:us-east-1:802587217904:destination:3c15c112-ecd8-4888-a388-8848bee05a98#zxPKL1qR3MH6ltTgSR#serverless-rest-api-with-dynamodb#Release",
+              "DestinationArn": "arn:aws:logs:us-east-1:802587217904:destination:3c15c112-ecd8-4888-a388-8848bee05a98#zxPKL1qR3MH6ltTgSR#serverless-rest-api-with-dynamodb#dev",
               "FilterPattern": "?\"REPORT RequestId: \" ?\"SERVERLESS_ENTERPRISE\"",
               "LogGroupName": {
                 "Ref": "DeleteLogGroup"
@@ -1231,7 +1231,7 @@
           "CloudWatchLogsSubscriptionFilterApiGatewayLogGroup": {
             "Type": "AWS::Logs::SubscriptionFilter",
             "Properties": {
-              "DestinationArn": "arn:aws:logs:us-east-1:802587217904:destination:3c15c112-ecd8-4888-a388-8848bee05a98#zxPKL1qR3MH6ltTgSR#serverless-rest-api-with-dynamodb#Release",
+              "DestinationArn": "arn:aws:logs:us-east-1:802587217904:destination:3c15c112-ecd8-4888-a388-8848bee05a98#zxPKL1qR3MH6ltTgSR#serverless-rest-api-with-dynamodb#dev",
               "FilterPattern": "\"SLS_ACCESS_LOG\"",
               "LogGroupName": {
                 "Ref": "ApiGatewayLogGroup"
@@ -1256,31 +1256,31 @@
           "ListLambdaFunctionQualifiedArn": {
             "Description": "Current Lambda function version",
             "Value": {
-              "Ref": "ListLambdaVersionlRpiHgZe0Dgi05XosCwcesPf2uhGmvPLxYubhLgflg"
+              "Ref": "ListLambdaVersionJkctOueIz0u91dpeZu7UoqhXGdtFS0cfoVDD8lEerG4"
             }
           },
           "GetLambdaFunctionQualifiedArn": {
             "Description": "Current Lambda function version",
             "Value": {
-              "Ref": "GetLambdaVersionv7tIqMfNa8iRkz6OkKMvPxutsrwIK5ZhWoWrr8np48"
+              "Ref": "GetLambdaVersionocXg9wZPh9lSYIQmTvHjVJjuXorBFgulLKyJM6SMRY"
             }
           },
           "UpdateLambdaFunctionQualifiedArn": {
             "Description": "Current Lambda function version",
             "Value": {
-              "Ref": "UpdateLambdaVersionVjxMxucNPROjH0dkq4rGfkj7UIjnLYQkhtRs8nuu0fE"
+              "Ref": "UpdateLambdaVersionPkYVR89csLQrqWNkKHbdFOpe6TMlGS5UJdFPNsUhk"
             }
           },
           "DeleteLambdaFunctionQualifiedArn": {
             "Description": "Current Lambda function version",
             "Value": {
-              "Ref": "DeleteLambdaVersion2OLA6jcSKUpGxl8VIt4bUYnpypiS4YCYwVZLqf2LIE"
+              "Ref": "DeleteLambdaVersionPGYXUkhZJ60e95Rk3BAVg9kIOZALr77zmJomuFD34"
             }
           },
           "CreateLambdaFunctionQualifiedArn": {
             "Description": "Current Lambda function version",
             "Value": {
-              "Ref": "CreateLambdaVersion8F4ThizAVYI7MYaxRdNdHWtrTup6FpN7m4OUgKMoiJY"
+              "Ref": "CreateLambdaVersiondkTcdbIlsOeE59gIjeeeZErSgMJrmbk1zBism6UuxF4"
             }
           },
           "ServiceEndpoint": {
@@ -1301,7 +1301,7 @@
                   {
                     "Ref": "AWS::URLSuffix"
                   },
-                  "/Release"
+                  "/dev"
                 ]
               ]
             }
@@ -1429,13 +1429,13 @@
             }
           }
         ],
-        "name": "serverless-rest-api-with-dynamodb-Release-create",
+        "name": "serverless-rest-api-with-dynamodb-dev-create",
         "package": {},
         "memory": 1024,
         "timeout": 6,
         "runtime": "python3.8",
         "vpc": {},
-        "versionLogicalId": "CreateLambdaVersion8F4ThizAVYI7MYaxRdNdHWtrTup6FpN7m4OUgKMoiJY"
+        "versionLogicalId": "CreateLambdaVersiondkTcdbIlsOeE59gIjeeeZErSgMJrmbk1zBism6UuxF4"
       },
       "list": {
         "handler": "s_list.handler",
@@ -1467,13 +1467,13 @@
             }
           }
         ],
-        "name": "serverless-rest-api-with-dynamodb-Release-list",
+        "name": "serverless-rest-api-with-dynamodb-dev-list",
         "package": {},
         "memory": 1024,
         "timeout": 6,
         "runtime": "python3.8",
         "vpc": {},
-        "versionLogicalId": "ListLambdaVersionlRpiHgZe0Dgi05XosCwcesPf2uhGmvPLxYubhLgflg"
+        "versionLogicalId": "ListLambdaVersionJkctOueIz0u91dpeZu7UoqhXGdtFS0cfoVDD8lEerG4"
       },
       "get": {
         "handler": "s_get.handler",
@@ -1505,13 +1505,13 @@
             }
           }
         ],
-        "name": "serverless-rest-api-with-dynamodb-Release-get",
+        "name": "serverless-rest-api-with-dynamodb-dev-get",
         "package": {},
         "memory": 1024,
         "timeout": 6,
         "runtime": "python3.8",
         "vpc": {},
-        "versionLogicalId": "GetLambdaVersionv7tIqMfNa8iRkz6OkKMvPxutsrwIK5ZhWoWrr8np48"
+        "versionLogicalId": "GetLambdaVersionocXg9wZPh9lSYIQmTvHjVJjuXorBFgulLKyJM6SMRY"
       },
       "update": {
         "handler": "s_update.handler",
@@ -1543,13 +1543,13 @@
             }
           }
         ],
-        "name": "serverless-rest-api-with-dynamodb-Release-update",
+        "name": "serverless-rest-api-with-dynamodb-dev-update",
         "package": {},
         "memory": 1024,
         "timeout": 6,
         "runtime": "python3.8",
         "vpc": {},
-        "versionLogicalId": "UpdateLambdaVersionVjxMxucNPROjH0dkq4rGfkj7UIjnLYQkhtRs8nuu0fE"
+        "versionLogicalId": "UpdateLambdaVersionPkYVR89csLQrqWNkKHbdFOpe6TMlGS5UJdFPNsUhk"
       },
       "delete": {
         "handler": "s_delete.handler",
@@ -1581,13 +1581,13 @@
             }
           }
         ],
-        "name": "serverless-rest-api-with-dynamodb-Release-delete",
+        "name": "serverless-rest-api-with-dynamodb-dev-delete",
         "package": {},
         "memory": 1024,
         "timeout": 6,
         "runtime": "python3.8",
         "vpc": {},
-        "versionLogicalId": "DeleteLambdaVersion2OLA6jcSKUpGxl8VIt4bUYnpypiS4YCYwVZLqf2LIE"
+        "versionLogicalId": "DeleteLambdaVersionPGYXUkhZJ60e95Rk3BAVg9kIOZALr77zmJomuFD34"
       }
     },
     "resources": {
@@ -1612,7 +1612,7 @@
               "ReadCapacityUnits": 1,
               "WriteCapacityUnits": 1
             },
-            "TableName": "serverless-rest-api-with-dynamodb-Release"
+            "TableName": "serverless-rest-api-with-dynamodb-dev"
           }
         }
       },
@@ -1644,10 +1644,10 @@
     "isDashboardAppPreconfigured": true,
     "orgUid": "3c15c112-ecd8-4888-a388-8848bee05a98",
     "appUid": "zxPKL1qR3MH6ltTgSR",
-    "artifact": "/home/ec2-user/environment/API-RESTful/ToDo/.serverless/serverless-rest-api-with-dynamodb.zip"
+    "artifact": "/home/ec2-user/environment/API-RESTful/.serverless/serverless-rest-api-with-dynamodb.zip"
   },
   "package": {
-    "artifactDirectoryName": "serverless/serverless-rest-api-with-dynamodb/Release/1610995035344-2021-01-18T18:37:15.344Z",
+    "artifactDirectoryName": "serverless/serverless-rest-api-with-dynamodb/dev/1611079831660-2021-01-19T18:10:31.660Z",
     "artifact": "serverless-rest-api-with-dynamodb.zip"
   }
 }
