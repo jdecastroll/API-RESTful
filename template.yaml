@@ -1,0 +1,33 @@
+AWSTemplateFormatVersion: '2020-09-09'
+Transform: 'AWS::Serverless-2016-10-31'
+Resources:  ReviewTranslate:
+    Type: 'AWS::Serverless::Function'
+    Properties:
+        Handler: example.lambda_handler
+        Runtime: python2.7
+        CodeUri:
+          Bucket: BUCKET_NAME
+          Key: example.zip
+        Policies:
+         - AWSLambdaFullAccess
+         - TranslateReadOnly
+        Environment:
+          Variables:
+            TABLE_NAME: !Ref ReviewTable  
+        Tracing: "Active"
+  ReviewTable:
+    Type: 'AWS::DynamoDB::Table'
+    Properties:
+        AttributeDefinitions: 
+            - AttributeName: "review_id"
+              AttributeType: "N"
+            - AttributeName: "language"
+              AttributeType: "S"
+        KeySchema:
+            - AttributeName: "review_id"
+              KeyType: "HASH"
+            - AttributeName: "language"
+              KeyType: "RANGE"
+        ProvisionedThroughput: 
+            ReadCapacityUnits: 5
+            WriteCapacityUnits: 5
