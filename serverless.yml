@@ -1,5 +1,4 @@
 service: serverless-rest-api-with-dynamodb
-
 frameworkVersion: ">=1.1.0"
 
 org: jdecastroll
@@ -11,6 +10,12 @@ provider:
   environment:
     DYNAMODB_TABLE: ${self:service}-${opt:stage, self:provider.stage}
   iamRoleStatements:
+    - Effect: Allow
+      Action:
+        - translate:TranslateText
+        - comprehend:DetectDominantLanguage
+      Resource: "*"    
+    
     - Effect: Allow
       Action:
         - dynamodb:Query
@@ -62,6 +67,14 @@ functions:
           method: delete
           cors: true
 
+  translate:
+    handler: todos/translate.translate
+    events:
+       - http:
+           path: todos/{id}/{lang}
+           method: get
+           cors: true
+
 resources:
   Resources:
     TodosDynamoDbTable:
@@ -80,3 +93,6 @@ resources:
           ReadCapacityUnits: 1
           WriteCapacityUnits: 1
         TableName: ${self:provider.environment.DYNAMODB_TABLE}
+
+plugins:
+  - serverless-python-requirements
