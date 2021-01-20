@@ -287,7 +287,7 @@
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
-          "S3Key": "serverless/serverless-rest-api-with-dynamodb/dev/1611164424105-2021-01-20T17:40:24.105Z/serverless-rest-api-with-dynamodb.zip"
+          "S3Key": "serverless/serverless-rest-api-with-dynamodb/dev/1611165105934-2021-01-20T17:51:45.934Z/serverless-rest-api-with-dynamodb.zip"
         },
         "Handler": "s_create.handler",
         "Runtime": "python3.8",
@@ -317,7 +317,7 @@
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
-          "S3Key": "serverless/serverless-rest-api-with-dynamodb/dev/1611164424105-2021-01-20T17:40:24.105Z/serverless-rest-api-with-dynamodb.zip"
+          "S3Key": "serverless/serverless-rest-api-with-dynamodb/dev/1611165105934-2021-01-20T17:51:45.934Z/serverless-rest-api-with-dynamodb.zip"
         },
         "Handler": "s_list.handler",
         "Runtime": "python3.8",
@@ -347,7 +347,7 @@
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
-          "S3Key": "serverless/serverless-rest-api-with-dynamodb/dev/1611164424105-2021-01-20T17:40:24.105Z/serverless-rest-api-with-dynamodb.zip"
+          "S3Key": "serverless/serverless-rest-api-with-dynamodb/dev/1611165105934-2021-01-20T17:51:45.934Z/serverless-rest-api-with-dynamodb.zip"
         },
         "Handler": "s_get.handler",
         "Runtime": "python3.8",
@@ -377,7 +377,7 @@
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
-          "S3Key": "serverless/serverless-rest-api-with-dynamodb/dev/1611164424105-2021-01-20T17:40:24.105Z/serverless-rest-api-with-dynamodb.zip"
+          "S3Key": "serverless/serverless-rest-api-with-dynamodb/dev/1611165105934-2021-01-20T17:51:45.934Z/serverless-rest-api-with-dynamodb.zip"
         },
         "Handler": "s_update.handler",
         "Runtime": "python3.8",
@@ -407,7 +407,7 @@
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
-          "S3Key": "serverless/serverless-rest-api-with-dynamodb/dev/1611164424105-2021-01-20T17:40:24.105Z/serverless-rest-api-with-dynamodb.zip"
+          "S3Key": "serverless/serverless-rest-api-with-dynamodb/dev/1611165105934-2021-01-20T17:51:45.934Z/serverless-rest-api-with-dynamodb.zip"
         },
         "Handler": "s_delete.handler",
         "Runtime": "python3.8",
@@ -437,7 +437,7 @@
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
-          "S3Key": "serverless/serverless-rest-api-with-dynamodb/dev/1611164424105-2021-01-20T17:40:24.105Z/serverless-rest-api-with-dynamodb.zip"
+          "S3Key": "serverless/serverless-rest-api-with-dynamodb/dev/1611165105934-2021-01-20T17:51:45.934Z/serverless-rest-api-with-dynamodb.zip"
         },
         "Handler": "s_translate.handler",
         "Runtime": "python3.8",
@@ -460,64 +460,64 @@
         "TranslateLogGroup"
       ]
     },
-    "ListLambdaVersionfUwpPBa3DKYBLEdwWUDq6T29BBkxjWfkou3G6rkI": {
+    "ListLambdaVersionJE6UNsK0UvX5PT1GtME6eVeRRhPkSpDO7DkVDcSuGmk": {
       "Type": "AWS::Lambda::Version",
       "DeletionPolicy": "Retain",
       "Properties": {
         "FunctionName": {
           "Ref": "ListLambdaFunction"
         },
-        "CodeSha256": "O1iDQIcfXx+oihzKozy1MndDD5xxmhBaQ5ZQpcWdrUk="
+        "CodeSha256": "SXHWP9Z3m/uDtcxfQbhL8Md47E88nQyZDmtF8duGTP8="
       }
     },
-    "GetLambdaVersionVVlIzbqFmdds7hsaW6QHCaff450Ehwn9W3gMnOe7SNo": {
+    "GetLambdaVersionmGqrXcqcDSQwmHYuLZaX86By7z4lqvWSQg91jEEYIE": {
       "Type": "AWS::Lambda::Version",
       "DeletionPolicy": "Retain",
       "Properties": {
         "FunctionName": {
           "Ref": "GetLambdaFunction"
         },
-        "CodeSha256": "O1iDQIcfXx+oihzKozy1MndDD5xxmhBaQ5ZQpcWdrUk="
+        "CodeSha256": "SXHWP9Z3m/uDtcxfQbhL8Md47E88nQyZDmtF8duGTP8="
       }
     },
-    "UpdateLambdaVersionSFygL4oRnjGzbuFyse1q3qBlQmq3WROGAIP0SexV3lo": {
+    "UpdateLambdaVersionVOCZdnYjRKvNlcd13gS4p8jMWXnpbecrqhHa6O2DkY": {
       "Type": "AWS::Lambda::Version",
       "DeletionPolicy": "Retain",
       "Properties": {
         "FunctionName": {
           "Ref": "UpdateLambdaFunction"
         },
-        "CodeSha256": "O1iDQIcfXx+oihzKozy1MndDD5xxmhBaQ5ZQpcWdrUk="
+        "CodeSha256": "SXHWP9Z3m/uDtcxfQbhL8Md47E88nQyZDmtF8duGTP8="
       }
     },
-    "DeleteLambdaVersionLlAARhuqxfd1I5XrVMG0iBwQvrbGvP7p0A84EuQonGs": {
+    "DeleteLambdaVersionI5SxnQ9IgcLsi0oGevhRpNE9J5AUB4s3cU6ommx7o": {
       "Type": "AWS::Lambda::Version",
       "DeletionPolicy": "Retain",
       "Properties": {
         "FunctionName": {
           "Ref": "DeleteLambdaFunction"
         },
-        "CodeSha256": "O1iDQIcfXx+oihzKozy1MndDD5xxmhBaQ5ZQpcWdrUk="
+        "CodeSha256": "SXHWP9Z3m/uDtcxfQbhL8Md47E88nQyZDmtF8duGTP8="
       }
     },
-    "TranslateLambdaVersionjWdA6ryv6GARfob7mQjy2gFRu5hUISW1NB8JmBuX4": {
+    "TranslateLambdaVersionm8MOY9i8ItejhgjLKT4RVIuYUFE8fhKZhcbf5TqlWs": {
       "Type": "AWS::Lambda::Version",
       "DeletionPolicy": "Retain",
       "Properties": {
         "FunctionName": {
           "Ref": "TranslateLambdaFunction"
         },
-        "CodeSha256": "O1iDQIcfXx+oihzKozy1MndDD5xxmhBaQ5ZQpcWdrUk="
+        "CodeSha256": "SXHWP9Z3m/uDtcxfQbhL8Md47E88nQyZDmtF8duGTP8="
       }
     },
-    "CreateLambdaVersionBEeUHYHCHqoSrL4Ooo34FfT5OXhHSilBSdlpc9lEjo": {
+    "CreateLambdaVersion2Aep3ykJn8shyujrYWALDCm1raFx0W3UiKvuTdSlw8": {
       "Type": "AWS::Lambda::Version",
       "DeletionPolicy": "Retain",
       "Properties": {
         "FunctionName": {
           "Ref": "CreateLambdaFunction"
         },
-        "CodeSha256": "O1iDQIcfXx+oihzKozy1MndDD5xxmhBaQ5ZQpcWdrUk="
+        "CodeSha256": "SXHWP9Z3m/uDtcxfQbhL8Md47E88nQyZDmtF8duGTP8="
       }
     },
     "ApiGatewayRestApi": {
@@ -964,7 +964,7 @@
         "MethodResponses": []
       }
     },
-    "ApiGatewayDeployment1611164417208": {
+    "ApiGatewayDeployment1611165097370": {
       "Type": "AWS::ApiGateway::Deployment",
       "Properties": {
         "RestApiId": {
@@ -1315,7 +1315,7 @@
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
-          "S3Key": "serverless/serverless-rest-api-with-dynamodb/dev/1611164424105-2021-01-20T17:40:24.105Z/custom-resources.zip"
+          "S3Key": "serverless/serverless-rest-api-with-dynamodb/dev/1611165105934-2021-01-20T17:51:45.934Z/custom-resources.zip"
         },
         "FunctionName": "serverless-rest-api-with-dynamod41bc63083231fc3b0a9060785270c305",
         "Handler": "apiGatewayCloudWatchRole/handler.handler",
@@ -1444,37 +1444,37 @@
     "ListLambdaFunctionQualifiedArn": {
       "Description": "Current Lambda function version",
       "Value": {
-        "Ref": "ListLambdaVersionfUwpPBa3DKYBLEdwWUDq6T29BBkxjWfkou3G6rkI"
+        "Ref": "ListLambdaVersionJE6UNsK0UvX5PT1GtME6eVeRRhPkSpDO7DkVDcSuGmk"
       }
     },
     "GetLambdaFunctionQualifiedArn": {
       "Description": "Current Lambda function version",
       "Value": {
-        "Ref": "GetLambdaVersionVVlIzbqFmdds7hsaW6QHCaff450Ehwn9W3gMnOe7SNo"
+        "Ref": "GetLambdaVersionmGqrXcqcDSQwmHYuLZaX86By7z4lqvWSQg91jEEYIE"
       }
     },
     "UpdateLambdaFunctionQualifiedArn": {
       "Description": "Current Lambda function version",
       "Value": {
-        "Ref": "UpdateLambdaVersionSFygL4oRnjGzbuFyse1q3qBlQmq3WROGAIP0SexV3lo"
+        "Ref": "UpdateLambdaVersionVOCZdnYjRKvNlcd13gS4p8jMWXnpbecrqhHa6O2DkY"
       }
     },
     "DeleteLambdaFunctionQualifiedArn": {
       "Description": "Current Lambda function version",
       "Value": {
-        "Ref": "DeleteLambdaVersionLlAARhuqxfd1I5XrVMG0iBwQvrbGvP7p0A84EuQonGs"
+        "Ref": "DeleteLambdaVersionI5SxnQ9IgcLsi0oGevhRpNE9J5AUB4s3cU6ommx7o"
       }
     },
     "TranslateLambdaFunctionQualifiedArn": {
       "Description": "Current Lambda function version",
       "Value": {
-        "Ref": "TranslateLambdaVersionjWdA6ryv6GARfob7mQjy2gFRu5hUISW1NB8JmBuX4"
+        "Ref": "TranslateLambdaVersionm8MOY9i8ItejhgjLKT4RVIuYUFE8fhKZhcbf5TqlWs"
       }
     },
     "CreateLambdaFunctionQualifiedArn": {
       "Description": "Current Lambda function version",
       "Value": {
-        "Ref": "CreateLambdaVersionBEeUHYHCHqoSrL4Ooo34FfT5OXhHSilBSdlpc9lEjo"
+        "Ref": "CreateLambdaVersion2Aep3ykJn8shyujrYWALDCm1raFx0W3UiKvuTdSlw8"
       }
     },
     "ServiceEndpoint": {
